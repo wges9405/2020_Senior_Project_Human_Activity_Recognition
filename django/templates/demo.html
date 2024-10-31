@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>HAR Demo</title>
+
+    {% load static %}
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.css' %}">
+    <!-- fontawesome Css -->
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.css' %}">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/helper.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/gif.css' %}" >
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+
+    <!-- MAIN HEADER AREA -->
+    <nav class="navbar navbar-expand-lg fixed-top trans-navigation ">
+        <div class="container">
+            <a class="navbar-brand">
+                <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid b-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <i class="fa fa-bars"></i>
+                </span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{% url 'intro' %}"> Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link smoth-scroll"> Demo </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- MAIN HEADER AREA END -->
+
+    <!-- MAIN DEMO AREA -->
+    <div class="banner-area banner-bg">
+        <div class="content-wrap banner">
+            <div class="main">
+                <div class="container-fluid">
+
+                    <!-- HEADER -->
+                    <div class="row">
+                        <div class="col-lg-8 p-l-0 title-margin-left"> 
+                            <div class="page-header"></div>
+                        </div>
+                    </div>
+                    <!-- HEADER-->
+
+                    <!-- CONTENT -->
+                    <section id="main-content">
+                        <!-- BUTTON -->
+                        <div class="row ">
+                            <div class="col-md-6 center">
+                                <div class="card">
+                                    <div class="stat-widget-two">
+                                        <div class="stat-content">
+                                            <a id="connection" href="javascript:;"  class="stat-text btn btn-white btn-circled btn-margin" >
+                                                {{ connection_status }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                        <!-- BUTTON -->
+
+                        <!-- RESULT -->
+                        <div class="row">
+                            <!-- STATIC / DYNAMIC -->
+                            <div class="col-md-5 center">
+                                <div class="card text-center">
+                                    <!-- title -->
+                                    <div class="m-t-10">
+                                        <p>Static / Dynamic</p>
+                                    </div>
+                                    <!-- chart -->
+                                    <div class="widget-card-circle pr m-t-20 m-b-20" id="info-circle-card"></div>
+                                    <!-- probability-->
+                                    <ul class="widget-line-list m-b-15">
+                                        <!-- static -->
+                                        <li class="border-right padding">
+                                            <span class="color-success" id="static">
+                                                {{ static_percentage }}
+                                            </span>
+                                            <span class="color-success"> % </span><br>
+                                            <span class="color-success"> Static </span>
+                                        </li>
+                                        <!-- dynamic -->
+                                        <li class="border-left">
+                                            <span class="color-danger" id="dynamic">
+                                                {{ dynamic_percentage }}
+                                            </span>
+                                            <span class="color-danger"> % </span><br>
+                                            <span class="color-danger"> Dynamic </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- STATIC / DYNAMIC -->
+                        </div>
+
+                        <div class="row">
+                            <!-- GIF -->
+                            <div class="col-lg-5 center">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title"> Activity Show </h4>
+                                        <div class="center nothing" id="GIF"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- GIF -->
+
+                            <!-- CHART -->
+                            <div class="col-lg-7 center">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title"> Activity Recognition </h4>
+                                        <div id="morris-bar-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CHART -->
+                        </div>
+                        <!-- RESULT -->
+                    </section>
+                    <!-- CONTENT -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MAIN DEMO AREA END -->
+    
+
+    <!--       Essential Scripts       -->
+    <!--===============================-->
+
+    <!-- Main jQuery -->
+    <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+    <!-- Bootstrap 4.3.1 -->
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- Woow animtaion -->
+    <script src="{% static 'plugins/counterup/wow.min.js' %}"></script>
+
+    <!-- python -->
+    <script src="{% static 'js/connection.js' %}"></script>
+
+    <!-- circle progress-->
+    <script src="{% static 'plugins/circle-progress/circle-progress.min.js' %}"></script>
+    <script src="{% static 'js/circle-progress-init.js' %}"></script>
+
+    <!-- morris chart -->
+    <script src="{% static 'plugins/morris-chart/raphael-min.js' %}"></script>
+    <script src="{% static 'plugins/morris-chart/morris.js' %}"></script>
+    <script src="{% static 'js/morris-init.js' %}"></script>
+
+    <!--===============================-->
+    <!--       Essential Scripts       -->
+</body>
+
+</html>

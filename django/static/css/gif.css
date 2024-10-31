@@ -1,0 +1,48 @@
+.nothing {
+    width:300px;
+    height:300px;
+    background: url("../images/nothing.png");
+}
+
+.sit_stand {
+    width: 300px;
+    height: 300px;
+    background: url("../images/sit_stand.png");
+}
+
+.lay {
+    width: 300px;
+    height: 300px;
+    background: url("../images/lay.png");
+}
+.walk {
+    width: 300px;
+    height: 300px;
+    background: url("../images/walk.png");
+    animation: bp-1200 .6s steps(4) infinite;
+}
+
+.upstair {
+    width: 300px;
+    height: 300px;
+    background: url("../images/upstair.png");
+    animation: bp-600 .5s steps(2) infinite;
+}
+
+.downstair {
+    width: 300px;
+    height: 300px;
+    background: url("../images/downstair.png");
+    animation: bp-600 .5s steps(2) infinite;
+}
+
+@keyframes bp-1200 {
+    100% {
+        background-position: -1200px;
+    }
+}
+@keyframes bp-600 {
+    100% {
+        background-position: -600px;
+    }
+}
